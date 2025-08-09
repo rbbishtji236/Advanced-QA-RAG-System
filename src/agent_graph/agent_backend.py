@@ -5,27 +5,24 @@ from typing_extensions import TypedDict
 from langchain_core.messages import ToolMessage
 from langgraph.graph.message import add_messages
 
-class State(TypedDict):
-    """Represents the state structure containing a list of messages.
 
-    Attributes:
-        messages (list): A list of messages, where each message can be processed
-        by adding messages using the `add_messages` function.
-    """
-    messages:Annotated[list,add_messages]
+class State(TypedDict):
+
+    messages: Annotated[list, add_messages]
+
 
 class BasicToolNode:
-    def __init__(self,tools:list)->None:
+    def __init__(self, tools: list) -> None:
         self.tools_by_name = {tool.name: tool for tool in tools}
 
-    def __call__(self,inputs:dict):
-        if messages := inputs.get("messages",[]):
+    def __call__(self, inputs: dict):
+        if messages := inputs.get("messages", []):
             message = messages[-1]
         else:
             raise ValueError("No message found in input")
-        outputs=[]
+        outputs = []
         for tool_call in message.tool_calls:
-            tool_result=self.tools_by_name[tool_call["name"]].invoke(
+            tool_result = self.tools_by_name[tool_call["name"]].invoke(
                 tool_call["args"]
 
             )
@@ -37,10 +34,9 @@ class BasicToolNode:
                 )
             )
         return {"messages": outputs}
-    
-def route_tools(
-    state: State,
-) -> Literal["tools", "__end__"]:
+
+
+def route_tools(state: State,) -> Literal["tools", "__end__"]:
     if isinstance(state, list):
         ai_message = state[-1]
     elif messages := state.get("messages", []):
