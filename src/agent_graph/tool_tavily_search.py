@@ -28,8 +28,6 @@ def load_tavily_search_tool(tavily_search_max_results: int, provider: Optional[s
     if provider == "tavily":
         if not _HAS_TAVILY:
             raise ImportError("Tavily tool not installed. Use provider='ddg' or install tavily tool.")
-        # uses TAVILY_API_KEY from env if present
         return TavilySearchResults(max_results=tavily_search_max_results)
 
-    # default: DuckDuckGo (no API key)
     return DuckDuckGoSearchResults(max_results=tavily_search_max_results)

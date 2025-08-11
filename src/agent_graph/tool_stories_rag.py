@@ -1,4 +1,4 @@
-# agent_graph/tool_stories_rag.py  (OpenAI -> HF embeddings via config)
+
 
 from langchain_chroma import Chroma
 from langchain_core.tools import tool

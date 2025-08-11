@@ -8,13 +8,11 @@ langchain
 langchain-chroma
 langchain-community
 langchain-core
-langchain-openai
 langchain-text-splitters
 langgraph
 langgraph-checkpoint
 langsmith
 numpy
-openai
 pandas
 pydantic
 pydantic_core
