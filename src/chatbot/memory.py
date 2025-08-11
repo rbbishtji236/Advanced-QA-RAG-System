@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from typing import List, Tuple, Union
+from typing import Tuple,Sequence
 from pathlib import Path
 from datetime import datetime, date
 from zoneinfo import ZoneInfo
@@ -9,7 +9,7 @@ class Memory:
 
     @staticmethod
     def write_chat_history_to_file(
-        gradio_chatbot: List[Union[Tuple[str, str], list, dict]],
+        gradio_chatbot: Sequence[Tuple[str, str]],
         thread_id: str,
         folder_path: str,
         tz: str = "Asia/Kolkata",
