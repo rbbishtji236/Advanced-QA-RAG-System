@@ -21,3 +21,4 @@ pyprojroot
 PyYAML
 SQLAlchemy
 langchain_groq
+langchain_huggingface
