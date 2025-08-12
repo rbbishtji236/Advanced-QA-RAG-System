@@ -3,7 +3,7 @@
 providers:
   llm:
     provider: groq                 
-    model: llama-3.1-70b-versatile
+    model: llama-3.3-70b-versatile
     temperature: 0.0
   embeddings:
     provider: huggingface          
@@ -11,7 +11,8 @@ providers:
     normalize: true
 
 primary_agent:
-  llm: default                     
+  provider: groq
+  llm: llama-3.3-70b-versatile
   llm_temperature: 0.0
 
 swiss_airline_policy_rag:
@@ -20,7 +21,7 @@ swiss_airline_policy_rag:
   collection_name: rag-chroma
   llm: default
   llm_temperature: 0.0
-  embedding: default              
+  embedding_model: BAAI/bge-small-en-v1.5               
   chunk_size: 800                 
   chunk_overlap: 120
   k: 4
@@ -31,7 +32,7 @@ stories_rag:
   collection_name: stories-rag-chroma
   llm: default
   llm_temperature: 0.0
-  embedding: default
+  embedding_model: BAAI/bge-small-en-v1.5
   chunk_size: 800
   chunk_overlap: 120
   k: 4

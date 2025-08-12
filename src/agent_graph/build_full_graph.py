@@ -15,11 +15,7 @@ TOOLS_CFG = LoadToolsConfig()
 
 def build_graph():
     
-    primary_llm = ChatGroq(
-        model=TOOLS_CFG.get_primary_llm(),
-        temperature=TOOLS_CFG.primary_agent_llm_temperature,
-        groq_api_key=os.getenv("GROQ_API_KEY")
-    )
+    primary_llm = TOOLS_CFG.get_primary_llm() 
     graph_builder = StateGraph(State)
     search_tool = load_tavily_search_tool(TOOLS_CFG.tavily_search_max_results)
     tools = [search_tool,

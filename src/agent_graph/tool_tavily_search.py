@@ -3,10 +3,10 @@ from typing import Optional
 import os
 
 # no key needed for DuckDuckGo
-from langchain_community.tools.ddg_search import DuckDuckGoSearchResults
+from langchain_community.tools.ddg_search.tool import DuckDuckGoSearchResults
 
 try:
-    from langchain_community.tools.tavily_search import TavilySearchResults
+    from langchain_community.tools import TavilySearchResults
     _HAS_TAVILY = True
 except Exception:
     _HAS_TAVILY = False

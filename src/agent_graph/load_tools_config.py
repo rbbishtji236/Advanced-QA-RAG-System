@@ -8,7 +8,8 @@ from pyprojroot import here
 from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings as HFEmbeddings
 
-load_dotenv()
+load_dotenv(here(".env"), override=True)
+
 
 
 class LoadToolsConfig:

@@ -3,6 +3,7 @@ python-dotenv
 Chroma
 chroma-hnswlib
 chromadb
+duckduckgo-search
 gradio
 langchain
 langchain-chroma
