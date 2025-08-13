@@ -3,10 +3,11 @@ import yaml
 from pyprojroot import here
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface  import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from dotenv import load_dotenv
 
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("hf_token","")
 
 class PrepareVectorDB:
     def __init__(self, doc_dir: str, chunk_size: int, chunk_overlap: int, embedding_model: str, vectordb_dir: str, collection_name: str) -> None:
@@ -36,7 +37,7 @@ class PrepareVectorDB:
             vectordb = Chroma.from_documents(
                 documents=doc_splits,
                 collection_name=self.collection_name,
-                embedding=HuggingFaceEmbeddings(model=self.embedding_model,huggingfacehub_api_token=os.getenv("hf_token")),
+                embedding=HuggingFaceEmbeddings(model=self.embedding_model),
                 persist_directory=str(here(self.vectordb_dir))
             )
             print("VectorDB is created and saved.")
@@ -48,7 +49,7 @@ class PrepareVectorDB:
 if __name__ == "__main__":
     load_dotenv()
 
-    with open(here("config/tools_config.yml")) as cfg:
+    with open(here("configs/tools_config.yml")) as cfg:
         app_config=yaml.load(cfg,Loader=yaml.FullLoader)
 
         chunk_size = app_config["swiss_airline_policy_rag"]["chunk_size"]
