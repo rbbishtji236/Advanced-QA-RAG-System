@@ -1,3 +1,4 @@
 .env
 venv
-notebooks"data/travel.sqlite" 
+notebooks
+data/travel.sqlite
