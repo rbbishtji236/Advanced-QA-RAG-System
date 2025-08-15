@@ -1,0 +1,53 @@
+thread_id,timestamp,user_query,response
+dev-thread-01,00:07:01,"In chinook DB, list the total sales per country. Which country's customers spent the most?","The country with the highest total sales is the USA, with a total of $523.06."
+dev-thread-01,00:23:21,how many aircraft are there in database and with there range also ?,"<function=query_travel_sqldb{""query"": ""SELECT count(*) , range FROM aircrafts;""}</function>"
+dev-thread-01,00:41:14,how many aircraft are there in database and with there range also ?,"<function=query_travel_sqldb{""query"": ""SELECT count(*) , range FROM aircrafts;""}</function>"
+dev-thread-01,00:55:50,list the total sales per country. Which country's customers spent the most?,"<function=query_chinook_sqldb{""query"": ""What are the total sales per country and which country's customers spent the most?""}</function>"
+dev-thread-01,00:57:43,list the total sales per country. Which country's customers spent the most?,"<function=query_chinook_sqldb{""query"": ""What are the total sales per country and which country's customers spent the most?""}</function>"
+dev-thread-01,00:58:22,"In the stories, who is lily?","<function=lookup_stories{""query"": ""who is lily""}</function>"
+dev-thread-01,01:09:47,list the total sales per country. Which country's customers spent the most?,"<function=query_chinook_sqldb{""query"": ""What are the total sales per country and which country's customers spent the most?""}</function>"
+dev-thread-01,01:10:27,"Based on the airline policy, do I need to reconfirm my flight?","<function=lookup_swiss_airline_policy{""query"": ""reconfirm flight""}</function>"
+dev-thread-01,01:11:08,Give me the link to some websites for langgraph tutorial,"<function=duckduckgo_results_json{""query"": ""Langgraph tutorial websites""}</function>"
+dev-thread-01,01:15:53,Give me the table names in chinook database,"The Chinook database contains the following tables:
+
+* Album
+* Artist
+* Customer
+* Employee
+* Genre
+* Invoice
+* InvoiceLine
+* MediaType
+* Playlist
+* PlaylistTrack
+* Track"
+dev-thread-01,01:16:23,Give me the table names in travel database,I don't have access to travel database information
+dev-thread-01,01:16:50,"Based on the airline policy, do I need to reconfirm my flight?","No, reconfirmation of SWISS flights is not required."
+dev-thread-01,01:17:31,Give me the link of Trump and Harris debate on youtube,"I couldn't find the specific link to the Trump and Harris debate on YouTube. However, you can try searching for the debate on YouTube or other news websites."
+dev-thread-01,01:18:02,"Based on the airline policy, can I cancel my ticket 10 hours before the flight?","According to Swiss Airlines' policy, you can cancel your ticket within 24 hours of booking without penalty. However, if you cancel your flight after the 24-hour window, you may be charged a cancellation fee or receive a partial refund, depending on the type of ticket you have purchased. Since your flight is 10 hours away, you may not be eligible for a full refund. It's best to check the terms and conditions of your ticket or contact Swiss Airlines directly to confirm their cancellation policy."
+dev-thread-01,01:18:22,"In chinook DB, list the total sales per country. Which country's customers spent the most?","The total sales per country are:
+
+* USA: $523.06
+* Canada: $303.96
+* France: $195.10
+* Brazil: $190.10
+* Germany: $156.48
+
+The country whose customers spent the most is the USA, with a total of $523.06."
+dev-thread-01,01:19:25,What are all the genres of Alanis Morisette songs?,"The genres of Alanis Morissette songs are:
+
+* Rock
+
+Note that the query results show that all the songs by Alanis Morissette in the Chinook database are classified under the 'Rock' genre. If there are other genres associated with her songs, they may not be present in this database."
+dev-thread-01,01:20:13,Give me a couple of his albums' names,"Alanis Morissette is a female artist. Here are a couple of her albums:
+
+* Jagged Little Pill
+* Supposed Former Infatuation Junkie"
+dev-thread-01,01:20:28,Give me the link to some websites for langgraph tutorial,"Here are a few websites that offer LangGraph tutorials:
+
+* Analytics Vidhya: LangGraph Tutorial for Beginners
+* FireCrawl: LangGraph Tutorial: Build a Startup Idea Validator with Interactive UI
+* Medium: How to Build AI Agents with LangGraph: A Step-by-Step Guide
+* DataCamp: How to Build LangGraph Agents Hands-On Tutorial
+
+You can visit these websites to learn more about LangGraph and its applications."

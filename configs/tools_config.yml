@@ -3,7 +3,7 @@
 providers:
   llm:
     provider: groq                 
-    model: llama-3.3-70b-versatile
+    model: meta-llama/llama-4-scout-17b-16e-instruct          #llama-3.3-70b-versatile
     temperature: 0.0
   embeddings:
     provider: huggingface          
@@ -12,7 +12,7 @@ providers:
 
 primary_agent:
   provider: groq
-  llm: llama-3.3-70b-versatile
+  llm: meta-llama/llama-4-scout-17b-16e-instruct
   llm_temperature: 0.0
 
 swiss_airline_policy_rag:
