@@ -39,12 +39,12 @@ stories_rag:
 
 travel_sqlagent_configs:
   travel_sqldb_dir: data/travel.sqlite
-  llm: default
+  llm: meta-llama/llama-4-scout-17b-16e-instruct
   llm_temperature: 0.0
 
 chinook_sqlagent_configs:
   chinook_sqldb_dir: data/Chinook.db
-  llm: default
+  llm: meta-llama/llama-4-scout-17b-16e-instruct
   llm_temperature: 0.0
 
 langsmith:
